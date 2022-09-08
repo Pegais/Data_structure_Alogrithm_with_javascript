@@ -112,19 +112,21 @@ class LinkedList{
         if (this.head == null || this.head.value >= node.value) {
             node.next = this.head;
             this.head = node;
-            console.log(this.head);
+            // console.log(this.head);
         } else {
             let current = this.head;
             // traversing and seeing if the new node value is grater than the existing node values;
             while (current.next != null && current.next.value< node.value) {
                 current = current.next;
             }
-            // if new node value is less than any existing node value, loop exists here, and we swap the positon of new node with that of current node.
+            // if new node value is less than any existing node value, loop exists here, and we swap the position of new node with that of current node.
             node.next = current.next;
             current.next= node;
         }
         this.size++
     }
+
+    
     print() {
         if (this.isEmpty()) {
             console.log("list is empty")
